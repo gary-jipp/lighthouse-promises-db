@@ -3,7 +3,9 @@ const { getWidgets, pool } = require("./db.js");
 
 // Call the promise in a function
 const myFunction = function () {
+  
   const promise = getWidgets();
+
   promise.then(res => {
     console.log(res.rows);
   });
