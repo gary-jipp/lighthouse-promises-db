@@ -10,12 +10,12 @@ getRecords("select * from widgets")
   })
   .catch(err => {
     console.log("catch:", Object.keys(err));
-    console.log("catch:", err.detail);    // Not all of these are useful
+    console.log("catch:", err.detail);  // Not all of these are useful
     console.log("catch:", err.code);
   })
   .finally(() => {
     console.log("finally");
-    pool.end();
+    pool.end();   // Now we can close the db connection
   });
 
 
