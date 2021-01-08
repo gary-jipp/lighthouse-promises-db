@@ -10,5 +10,9 @@ const getWidgets = function () {
   const query = "SELECT id, name FROM widgets LIMIT 5";
   return pool.query(query);
 };
+const getUsers = function () {
+  const query = "SELECT id, name FROM users LIMIT 5";
+  return pool.query(query);
+};
 
-module.exports = { getWidgets, pool };
+module.exports = { getWidgets, getUsers, pool };
