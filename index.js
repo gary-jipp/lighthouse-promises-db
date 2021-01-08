@@ -16,7 +16,7 @@ promise
   })
   .then(res => {
     console.log("then:",res);   //  What is res here?
-    return 5;
+    // return 5;
   })
   .then(res => {
     console.log("then:",res);   // What happened here?  undefined!
