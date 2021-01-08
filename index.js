@@ -17,7 +17,9 @@ const callback = function (res) {
 promise.then(callback);
 
 // Normally we would write the callback inline, using an arrow function
-promise.then(res => console.log(res.rows));
+promise.then(res => {
+  console.log(res.rows);
+});
 
 // This just closes the pool quicker
 pool.end();
