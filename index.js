@@ -1,23 +1,22 @@
 console.log("\n***Start of my Code ***");
-const { getWidgets, getUsers, pool } = require("./db.js");
+const { getRecords, pool } = require("./db.js");
 
-
-const promise = getWidgets();
 
 // We usually put the "then" on a separate line
-promise
+getRecords("select * from widgets")
   .then(res => {
     console.log(res.rows);
-    return getUsers();    // We can call another promise after this one
+    return getRecords("select * from wwwwidgets");
   })
-  .then(res => {
-    console.log(res.rows);
+  .catch(err => {
+    console.log("catch:", Object.keys(err));
+    console.log("catch:", err.detail);    // Not all of these are useful
+    console.log("catch:", err.code);
   })
-  .then(res => {
-    console.log(res);   // What happened here?  undefined!
-  })
-  .catch(e => console.log(e));
+  .finally(() => {
+    console.log("finally");
+    pool.end();
+  });
 
 
-// pool.end();   //  Why can't we do this here anymore??
 console.log("***End of my Code ***\n");
