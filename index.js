@@ -7,18 +7,19 @@ const promise = getWidgets();
 // We usually put the "then" on a separate line
 promise
   .then(res => {
-    console.log(res.rows);
+    console.log("then:",res.rows);
     return getUsers();    // We can call another promise after this one
   })
   .then(res => {
-    console.log(res.rows);
+    console.log("then:",res.rows);
     return res.rows;
   })
   .then(res => {
-    console.log(res);   //  What is res here?
+    console.log("then:",res);   //  What is res here?
+    return 5;
   })
   .then(res => {
-    console.log(res);   // What happened here?  undefined!
+    console.log("then:",res);   // What happened here?  undefined!
   })
   .catch(e => console.log(e));
 
