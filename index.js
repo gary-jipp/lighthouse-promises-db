@@ -12,6 +12,10 @@ promise
   })
   .then(res => {
     console.log(res.rows);
+    return res.rows;
+  })
+  .then(res => {
+    console.log(res);   //  What is res here?
   })
   .then(res => {
     console.log(res);   // What happened here?  undefined!
