@@ -1,9 +1,14 @@
-console.log("\n***Start of my Code ***");
-const { getWidgets, pool } = require("./db.js");
-
+const { Pool } = require("pg");
+const pool = new Pool({
+  user: "labber",
+  password: "labber",
+  host: "localhost",
+  database: "midterm",
+});
 
 // call a function that returns a Promise
-const promise = getWidgets();
+const query = "SELECT id, name FROM widgets LIMIT 5";
+const promise = pool.query(query);
 console.log(promise);
 
 // Need to know when the promise is "done" (resolved)
