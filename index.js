@@ -1,10 +1,10 @@
 console.log("***Start of my Code ***\n");
 const { Pool } = require("pg");
 const pool = new Pool({
-  user: "vagrant",
-  password: "123",
+  user: "labber",
+  password: "labber",
   host: "localhost",
-  database: "lightbnb",
+  database: "midterm",
 });
 
 // call a function that returns a Promise
