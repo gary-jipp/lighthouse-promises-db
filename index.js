@@ -1,9 +1,9 @@
 const { Pool } = require("pg");
 const pool = new Pool({
-  user: "labber",
-  password: "labber",
+  user: "vagrant",
+  password: "123",
   host: "localhost",
-  database: "midterm",
+  database: "lightbnb",
 });
 
 // call a function that returns a Promise
