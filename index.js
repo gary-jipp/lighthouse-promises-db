@@ -27,6 +27,6 @@ promise.then(res => {
 });
 
 // This just closes the pool quicker
-pool.end();
+// pool.end();
 
 console.log("***End of my Code ***\n");
