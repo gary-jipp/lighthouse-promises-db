@@ -16,14 +16,19 @@ console.log(promise);
 // This is the basic promise pattern
 promise.then();
 
+// We can then() the same promise over and over.  Does not run the actiom again
+
 // then() needs a callback function or we'll never know what happened
 const callback = function (res) {
+  console.log();
   console.log(res.rows);
 };
 promise.then(callback);
+console.log();
 
 // Normally we would write the callback inline, using an arrow function
 promise.then(res => {
+  console.log();
   console.log(res.rows);
 });
 
