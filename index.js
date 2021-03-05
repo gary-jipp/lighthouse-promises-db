@@ -16,7 +16,10 @@ console.log(promise);
 // This is the basic promise pattern
 promise.then();
 
-// We can then() the same promise over and over.  Does not run the actiom again
+// We can then() the same promise over and over.  Does not run the action again
+promise.then();
+promise.then();
+promise.then();
 
 // then() needs a callback function or we'll never know what happened
 const callback = function (res) {
