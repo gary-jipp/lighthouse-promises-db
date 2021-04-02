@@ -7,8 +7,9 @@ const pool = new Pool({
 });
 
 const getWidgets = function () {
-  const res = "SELECT id, name FROM widgets LIMIT 5";
-  return pool.query(res);
+  const sql = "SELECT id, name FROM widgets LIMIT 5";
+
+  return pool.query(sql);
 };
 
 module.exports = { getWidgets, pool };
