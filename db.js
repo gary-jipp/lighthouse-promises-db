@@ -6,10 +6,6 @@ const pool = new Pool({
   database: "midterm",
 });
 
-const getWidgets = function () {
-  const sql = "SELECT id, name FROM widgets LIMIT 5";
+const sql = "SELECT id, name FROM widgets LIMIT 5";
+pool.query(sql);
 
-  return pool.query(sql);
-};
-
-module.exports = { getWidgets, pool };
