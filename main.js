@@ -34,7 +34,4 @@ promise.then(res => {
   console.log(res.rows);
 });
 
-// This just closes the pool quicker
-// pool.end();
-
 console.log("***End of my Code ***\n");
