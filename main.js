@@ -3,14 +3,13 @@ const { getRecords, pool } = require("./db.js");
 
 
 // We usually put the "then" on a separate line
-getRecords("select * from widgets")
+getRecords("select name from users limit 2")
   .then(res => {
     console.log(res.rows);
-    return getRecords("select * from users limit 3");
+    return getRecords("select name from users limit 3");
   })
   .then(res => {
     console.log(res.rows);
-    return getRecords("select * from wwidgets");
   })
   .catch(err => {
     // console.log("catch:", Object.keys(err));
