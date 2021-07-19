@@ -9,6 +9,6 @@ promise
   .then(result => {
     console.log(result.data.quote);
   })
-  .catch(e => console.log(e.errno));
+  .catch(e => console.log(e.message));
 
 console.log("***End of my Code ***\n");
