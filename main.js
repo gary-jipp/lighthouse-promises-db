@@ -1,33 +1,14 @@
-const { Pool } = require("pg");
-const pool = new Pool({
-  user: "vagrant",
-  password: "123",
-  host: "localhost",
-  database: "lightbnb",
-});
+const axios = require("axios");
 
-// call a function that returns a Promise
-const query = "SELECT id, name FROM users LIMIT 5";
-const promise = pool.query(query);
-console.log(promise);
+console.log("\n***Start of my Code ***");
 
-// Need to know when the promise is "done" (resolved)
-// This is the basic promise pattern
-promise.then();
+const url = "https://api.kanye.rest/";
+const promise = axios.get(url);
 
-// then() needs a callback function or we'll never know what happened
-const callback = function (res) {
-  console.log();
-  console.log(res.rows);
-};
-promise.then(callback);
-console.log();
-
-// Notice we can "then" the same promise more than once
-
-// Normally we would write the callback inline, using an arrow function
-promise.then(res => {
-  console.log(res.rows);
-});
+promise
+  .then(result => {
+    console.log(result.data.quote);
+  })
+  .catch(e => console.log(e.errno));
 
 console.log("***End of my Code ***\n");
