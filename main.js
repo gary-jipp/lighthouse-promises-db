@@ -1,5 +1,10 @@
 console.log("\n***Start of my Code ***");
-const { getUsers, pool } = require("./db.js");
+const { pool } = require("./db.js");
+
+const getUsers = function () {
+  const query = "SELECT id, name FROM users LIMIT 5";
+  return pool.query(query);
+};
 
 // Call my new Function
 const result = getUsers();
