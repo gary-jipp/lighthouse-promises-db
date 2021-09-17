@@ -1,13 +1,13 @@
 const { Pool } = require("pg");
 const pool = new Pool({
-  user: "vagrant",
-  password: "123",
+  user: "labber",
+  password: "labber",
   host: "localhost",
-  database: "lightbnb",
+  database: "midterm",
 });
 
 // call a function that returns a Promise
-const query = "SELECT id, name FROM users LIMIT 5";
+const query = "SELECT id, name FROM users ";
 const promise = pool.query(query);
 console.log(promise);
 
@@ -16,14 +16,16 @@ console.log(promise);
 promise.then();
 
 // then() needs a callback function or we'll never know what happened
-const callback = function (res) {
+const callback = function(res) {
   console.log();
   console.log(res.rows);
 };
+
 promise.then(callback);
-console.log();
 
 // Notice we can "then" the same promise more than once
+promise.then(callback);
+promise.then(callback);
 
 // Normally we would write the callback inline, using an arrow function
 promise.then(res => {
