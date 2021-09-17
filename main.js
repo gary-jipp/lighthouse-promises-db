@@ -1,3 +1,5 @@
+console.log("\n***Start of my Code ***");
+
 const { Pool } = require("pg");
 const pool = new Pool({
   user: "labber",
