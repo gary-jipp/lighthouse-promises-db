@@ -5,7 +5,7 @@ const pool = new Pool({
   user: "labber",
   password: "labber",
   host: "localhost",
-  database: "lightbnb",
+  database: "midterm",
 });
 
 const sql = "select id, name, email from users limit 10"; 
