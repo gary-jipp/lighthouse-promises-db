@@ -6,8 +6,3 @@ const pool = new Pool({
   database: "midterm",
 });
 
-const sql = "select * from users";
-pool.query(sql)
-  .then(res => {
-    console.log(res.rows);
-  });
