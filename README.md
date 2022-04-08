@@ -7,5 +7,6 @@
 - [ ] Promise Functions
 - [ ] using catch()
 - [ ] return from catch()
-
-
+- [ ] finally()
+- [ ] axios
+- [ ] chaining 2 promises
