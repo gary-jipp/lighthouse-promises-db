@@ -1,5 +1,10 @@
-console.log("\n***Start of my Code ***");
+const { Pool } = require("pg");
 
+const pool = new Pool({
+  user: "labber",
+  password: "labber",
+  host: "localhost",
+  database: "midterm",
+});
 
-
-console.log("***End of my Code ***\n");
+const sql = "select * from users";
