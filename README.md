@@ -4,9 +4,13 @@
 - [ ] calling then() the same Promise
 - [ ] chaining then()
 - [ ] return from then
-- [ ] Promise Functions
+- [ ] Promise Functions - extension of chained then()
+- [ ] axios
 - [ ] using catch()
+- [ ] danger of generic messages - use err.message
 - [ ] return from catch()
 - [ ] finally()
-- [ ] axios
 - [ ] chaining 2 promises
+- [ ] promise.all
+- [ ] promise.race
+- [ ] promise.allSettled
