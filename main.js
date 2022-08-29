@@ -8,7 +8,11 @@ const pool = new Pool({
   database: "midterm",
 });
 
-const sql = "select id, name, email from users limit 10"; 
+
+const sql = "select * from users";
+const result = pool.query(sql);
+console.log(result);
+
 pool.query(sql)
   .then(res => {
     console.log(res.rows);
