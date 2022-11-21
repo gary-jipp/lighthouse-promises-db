@@ -3,7 +3,8 @@ const axios = require("axios");
 console.log("\n***Start of my Code ***");
 
 // const url = "https://api.kanye.rest";
-const url = "https://officeapi.dev/api/quotes/random";
+// const url = "https://officeapi.dev/api/quotes/random";
+const url = "http://api.office.rest";
 const promise = axios.get(url);
 
 promise
