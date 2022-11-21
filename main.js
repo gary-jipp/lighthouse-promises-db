@@ -1,9 +1,15 @@
-const { Pool } = require("pg");
+const axios = require('axios');
 
-const pool = new Pool({
-  user: "labber",
-  password: "labber",
-  host: "localhost",
-  database: "midterm",
-});
+const url = "http://api.office.rest";
 
+axios.get(url)
+  .then(res => {
+    console.log(res.data);
+  })
+  .catch(err => {
+    console.log(err.message);
+  })
+  ;
+
+
+console.log("*** End of our Code ** ");
