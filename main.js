@@ -1,25 +1,27 @@
+const {Pool} = require("pg");
+const pool = new Pool({
+  user: "labber",
+  password: "labber",
+  host: "localhost",
+  database: "midterm",
+});
+
+
 console.log("\n***Start of my Code ***");
-const { getUsers, pool } = require("./db.js");
 
-
-const promise = getUsers();
 
 // We usually put the "then" on a separate line
-promise
+pool.query("insert into users (name, email) values ('Alice', 'alice@email.com') returning *")
   .then(res => {
-    console.log("then 1:", res.rows);
-    return getUsers();    // We can call another promise after this one
+    const user = res.rows[0];
+    console.log("new user", user);
+    const sql = "insert into widgets (name, user_id) values ($1, $2) returning *";
+    return pool.query(sql, ["New Widget", user.id]
+    );
   })
   .then(res => {
-    console.log("then 2:", res.rows);
-    return res.rows;
-  })
-  .then(res => {
-    console.log("then 3:", res);   //  What is res here?
-    // return 5;
-  })
-  .then(res => {
-    console.log("then 4:", res);   // What happened here?  undefined!
+    const widget = res.rows[0];
+    console.log("widget", widget);
   })
   .catch(e => console.log(e));
 
